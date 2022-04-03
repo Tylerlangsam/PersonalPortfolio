@@ -2,6 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.log
+*.pot
+*.pyc
+local_settings.py
+/static/
 
 # C extensions
 *.so
