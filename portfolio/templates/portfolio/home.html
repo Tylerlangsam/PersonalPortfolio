@@ -1,44 +1,69 @@
-{% extends "portfolio/base.html" %}
-
-{% load static %}
-
-{% block content %}
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
 
 <div class="row justify-content-center my-3">
   <div class="col-5">
-    <img src='{% static "portfolio/IMG_3935.jpg" %}' class="img-fluid">
+    <img src='{% static "portfolio/IMG_3935.jpg" %}' class="img-fluid" />
   </div>
 </div>
 
 <div class="row justify-content-center mb-3">
   <div class="col-md-9 text-center">
-    <h6>Tyler Langsam is a Django/Python Web Developer based in Brooklyn, New York.  </h6>
+    <container class="bio">
+      <h6>
+        As a Python/Django Full Stack Web Development Teaching Assistant at
+        Columbia Business School, I have trained over 75 students in technical
+        skills and computer science fundamentals. I have also mentored students
+        in project management, product development, and collaborative skill
+        building, and contributed to curriculum design by gathering and
+        analyzing student feedback.<br /><br />
+
+        Prior to this role, I was a Shipping and Receiving Supervisor at Killer
+        Merch LLC - Jeffree Star Cosmetics, where I coordinated and supervised a
+        team of 20 members, cross-trained over 50 team members across several
+        departments, and was responsible for the movement and security of over
+        $10 million worth of merchandise each day. I also served as a Shipping
+        and Receiving Lead, managing all aspects of product inventory, leading
+        and participating in projects to optimize operational efficiency, and
+        directing cargo loading.<br /><br />
+
+        In my personal projects, I have designed and written a relational
+        database schema using SQLite, Django, and Python, contributed to full
+        stack code development, acted as project lead and code reviewer, built
+        wireframes using Miro, and created user experience flows. I have also
+        designed entity-relationship diagrams to demonstrate database
+        relationships and business logic. Additionally, I have built a personal
+        portfolio website using Python and Django, deployed with PythonAnywhere,
+        added additional features and functionality, and implemented responsive
+        frontend design using Bootstrap.<br /><br />
+
+        I am skilled in Python, Django, HTML, CSS, Bootstrap, Javascript, React,
+        pair programming, code review, technical mentorship, technical
+        communication, Git, Github, OOP, data structures, debugging, deployment,
+        problem solving, critical thinking, data entry management, supply chain
+        management, and Acumatica. I also possess strong leadership and time
+        management skills.
+      </h6>
+    </container>
   </div>
 </div>
 
 <h2 class="mt-5">Portfolio</h2>
-<hr>
+<hr />
 <div class="row">
   {% for project in projects %}
   <div class="col-lg-4 col-md-6">
-
     {% if project.url %}
     <a href="{{ project.url }}">
-      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2" />
     </a>
     {% else %}
 
-    <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    <img src="{{ project.image.url }}" class="img-fluid mb-2" />
     {% endif %}
     <h3>{{ project.title }}</h3>
     <p>{{ project.description }}</p>
-
   </div>
   {% endfor %}
 </div>
 
 {% endblock %}
-
-
-
-   
